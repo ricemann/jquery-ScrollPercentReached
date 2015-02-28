@@ -1,0 +1,7 @@
+.log{
+  float:right;
+}
+.target{
+  float:left;
+  border:red solid 1px;
+}
