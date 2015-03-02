@@ -7,11 +7,13 @@
         maxYScrollPos,
         percentScrolled,
         maxReached = false,
-        itemFullHeight = Math.max(nativeTarget.scrollHeight, 
-                                  nativeTarget.offsetHeight, 
-                                  nativeTarget.clientHeight,
-                                  nativeTarget.scrollHeight, 
-                                  nativeTarget.offsetHeight );
+        itemFullHeight = Math.max(nativeTarget.scrollHeight ? nativeTarget.scrollHeight : 0,
+                                  nativeTarget.offsetHeight ? nativeTarget.offsetHeight : 0,
+                                  nativeTarget.clientHeight ? nativeTarget.clientHeight : 0,
+                                  nativeTarget.scrollHeight ? nativeTarget.scrollHeight : 0,
+                                  nativeTarget.offsetHeight ? nativeTarget.offsetHeight : 0,
+                                  nativeTarget.innerHeight ? nativeTarget.innerHeight : 0 // if window
+                                );
 
     function GetMaxScrollValue(){
       return  itemFullHeight;
